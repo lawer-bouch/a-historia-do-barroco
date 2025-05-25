@@ -1,9 +1,9 @@
 /* Corpo da página */
 body {
-  margin: 0; /* Remove a margem padrão do body */
-  padding: 0; /* Remove o padding padrão do body */
-  height: 100vh; /* Garante que o body ocupe toda a altura da tela */
-  overflow: hidden; /* Impede que o scroll apareça */
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow: auto; /* Permite scroll se necessário */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,12 +13,13 @@ body {
 /* Contêiner dos cards */
 #coisos {
   display: flex;
-  justify-content: center; /* Centraliza os cards horizontalmente */
-  align-items: center; /* Centraliza os cards verticalmente */
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+  justify-content: center;
+  align-items: center;
   gap: 40px;
-  min-height: 100%; /* Garante que o container ocupe 100% da altura disponível */
-  width: 100%; /* O contêiner ocupa a largura total */
-  padding: 0;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Estilo dos cards */
@@ -26,13 +27,15 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 16px;
   padding: 30px;
-  width: 360px; /* Largura maior para os cards */
   text-align: center;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(4px); /* Efeito embaçado */
+  backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  flex-shrink: 0; /* Impede que os cards encolham */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  flex: 1 1 300px; /* Adapta o tamanho dos cards */
+  max-width: 360px;
+  min-width: 250px;
 }
 
 .card:hover {
