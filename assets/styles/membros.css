@@ -1,0 +1,69 @@
+/* Corpo da página */
+body {
+  margin: 0; /* Remove a margem padrão do body */
+  padding: 0; /* Remove o padding padrão do body */
+  height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+  overflow: hidden; /* Impede que o scroll apareça */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Contêiner dos cards */
+#coisos {
+  display: flex;
+  justify-content: center; /* Centraliza os cards horizontalmente */
+  align-items: center; /* Centraliza os cards verticalmente */
+  gap: 40px;
+  min-height: 100%; /* Garante que o container ocupe 100% da altura disponível */
+  width: 100%; /* O contêiner ocupa a largura total */
+  padding: 0;
+}
+
+/* Estilo dos cards */
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  padding: 30px;
+  width: 360px; /* Largura maior para os cards */
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(4px); /* Efeito embaçado */
+  -webkit-backdrop-filter: blur(4px);
+  flex-shrink: 0; /* Impede que os cards encolham */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+#foto {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#nome {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--corTexto);
+}
+
+.arquivo {
+  font-size: 15px;
+  color: #c1c1c1;
+  margin-bottom: 0;
+}
+
+ion-icon {
+  color: var(--corPrimaria);
+  margin-right: 6px;
+  vertical-align: middle;
+  font-size: 18px;
+}
